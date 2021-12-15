@@ -39,7 +39,8 @@ class PipelineStack(core.Stack):
                 output=source_artifact,
                 oauth_token=core.SecretValue.secrets_manager('trainer-github-token'),
                 owner='ic-crc', #"GITHUB-OWNER"
-                repo='vrd20-postaccel', #"GITHUB-REPO"
+                repo='vrd20-postaccel', #"GITHUB-REPO",
+                branch='main',
                 trigger=cpactions.GitHubTrigger.POLL),
 
             synth_action=pipelines.SimpleSynthAction(
